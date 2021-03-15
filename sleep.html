@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>camping/cabins</title>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+
+    <link rel="stylesheet" href="./Normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        :root {
+            --bor: 1px solid red;
+
+
+        }
+
+        .hambuger {
+            background-color: #E9F8FF;
+            width: 100%;
+            height: 99vh;
+            position: fixed;
+            z-index: 98;
+            opacity: 0.9;
+            margin: 0 0;
+            top: 0;
+            left: 0;
+
+
+        }
+
+
+
+
+        .hambuger_use {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0;
+            padding: 0 0;
+
+        }
+
+        .hambuger_use li {
+            width: 200px;
+            font-size: 22px;
+            font-family: Noto Sans TC;
+            list-style-type: none;
+            margin-top: 30px;
+            border-bottom: 1px solid #BACCE6;
+            text-decoration: none;
+
+
+        }
+
+        .hambuger_use h4 {
+            color: #7B9BCB;
+            font-size: 18px;
+            font-weight: 400;
+            font-family: 'Segoe UI';
+            text-align: center;
+            margin: 0 0 8px;
+
+        }
+
+        .hambuger_use a {
+            color: #7B9BCB;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+
+        }
+
+        body {
+            background-color: #FFF7EE;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 90px;
+            background-color: #7B9BCB;
+            padding: 0 0;
+            display: flex;
+            justify-content: space-around;
+
+
+        }
+
+        .logo {
+            width: 130px;
+            height: 90px;
+
+
+
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+
+        }
+
+        .navbar li {
+            list-style: none;
+            margin-top: 20px;
+
+        }
+
+        .navbar ul {
+            display: flex;
+
+            width: 1200px;
+            justify-content: space-evenly;
+            margin: 0px 0;
+            text-align: center;
+
+        }
+
+        .navbar li a {
+            font-size: 24px;
+            text-decoration: none;
+            color: #E9F8FF;
+            font-family: Noto Sans TC;
+            font-weight: 300;
+
+        }
+
+        .navbar li a:hover {
+            color: #BACCE6;
+
+        }
+
+        .navbar h5 {
+            font-family: Segoe UI;
+            font-size: 20px;
+            font-weight: 300;
+            margin: 0 0;
+        }
+
+        .member {
+
+            width: 130px;
+            display: flex;
+            justify-content: space-between;
+
+
+
+        }
+
+        .title {
+            width: 40%;
+            margin: 100px auto 0;
+            font-size: 33px;
+            color: #7B9BCB;
+            font-family: Noto Sans TC;
+            text-align: center;
+        }
+
+        .title::after {
+            content: "";
+            background: url("./icon/other_title_use.svg")0 0 no-repeat;
+            display: block;
+            width: 200px;
+            height: 50px;
+            position: absolute;
+            top: 26.3%;
+            left: 46%;
+            /* border: var(--bor); */
+        }
+
+        .text {
+            width: 30%;
+            color: #7B9BCB;
+            font-family: Noto Sans TC;
+            font-size: 22px;
+            text-align: center;
+            margin: 30px auto 0;
+            letter-spacing: 3px;
+        }
+
+        .member_mobile {
+            display: none;
+        }
+
+
+
+        .camping_title,
+        .cabins_title {
+            width: 200px;
+            font-size: 28px;
+            color: #7B9BCB;
+            font-family: Noto Sans TC;
+            margin: 200px 0px 50px 300px;
+
+        }
+
+        .camping_title::before,
+        .cabins_title::before {
+            content: "";
+            background: url("icon/tree.svg")0 0px no-repeat;
+            display: inline-block;
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+
+            position: relative;
+            top: 10px;
+
+        }
+
+        .conten_text,
+        .equipment_text {
+            width: 75%;
+            height: 200px;
+            font-size: 22px;
+            font-family: Noto Sans TC;
+            color: #7B9BCB;
+            margin: 0 0 0 100px;
+            line-height: 30px;
+            letter-spacing: 2px;
+
+        }
+
+        .equipment_text {
+            font-size: 24px;
+
+        }
+
+        .button ul {
+            width: 700px;
+            display: grid;
+            grid-template-columns: 300px 300px;
+            Grid-template-rows: 40px 40px;
+            column-gap: 20px;
+            row-gap: 20px;
+
+            padding-left: 100px;
+        }
+
+        .button li {
+            /* width: 300px;
+            height: 50px; */
+            background-color: #7B9BCB;
+            border-radius: 50px;
+            list-style-type: none;
+            line-height: 40px;
+            padding-left: 20px;
+
+        }
+
+        .button li:hover {
+
+            background-color: #BACCE6;
+            border-radius: 50px;
+            list-style-type: none;
+            line-height: 40px;
+            padding-left: 20px;
+
+        }
+
+        .button a {
+            font-size: 20px;
+            color: #E9F8FF;
+            text-decoration: none;
+
+
+        }
+
+
+
+
+        .a1::before,
+        .a2::before,
+        .a3::before,
+        .a4::before,
+        .a5::before,
+        .a6::before,
+        .a7::before,
+        .a8::before {
+            content: "more";
+            background: url("./icon/arrow.svg")60px 14px no-repeat;
+            display: inline-block;
+            position: absolute;
+            left: 29%;
+            font-size: 20px;
+            color: #E9F8FF;
+            text-decoration: none;
+            font-family: Segoe UI;
+
+            width: 100px;
+
+        }
+
+        .a2::before,
+        .a4::before,
+        .a6::before,
+        .a8::before {
+            left: 46%;
+
+        }
+
+
+
+
+        .camping,
+        .cabins {
+            width: 75%;
+
+            margin: 0 auto;
+            display: flex;
+
+
+        }
+
+        .box {
+            width: 60%;
+
+
+
+        }
+
+        .pic {
+
+            justify-content: end;
+        }
+
+        .img-demo-camping,
+        .img-demo-cabin {
+            width: 450px;
+            height: 300px;
+
+        }
+
+        .img-demo-camping img,
+        .img-demo-cabin img {
+            width: 100%;
+            height: 100%;
+
+
+        }
+
+        .img-row-camping,
+        .img-row-cabin {
+            width: 70px;
+            height: 70px;
+
+            border-radius: 50px;
+            overflow: hidden;
+
+        }
+
+        .img-row-camping img,
+        .img-row-cabin img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+
+        .img-wrap {
+
+            margin: 20px 0 0 5px;
+            justify-content: space-evenly;
+
+        }
+
+        .equipment {
+            width: 60%;
+            height: 60px;
+            display: flex;
+
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+
+        .eq_icon {
+            width: 500px;
+            height: 50px;
+            display: flex;
+
+
+        }
+
+        .eq_icon_1 {
+            width: 60px;
+            height: 60px;
+
+            background-color: #E9F8FF;
+            margin: 0 10px;
+            border-radius: 10px;
+
+        }
+
+        .eq_icon_1 img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+            margin: 8px;
+
+        }
+
+        .footer {
+            width: 100%;
+            height: 450px;
+
+            background: url("./icon/other_footer_bgc.svg") -50px 130px no-repeat;
+            background-size: cover;
+
+
+        }
+
+        /* 手機 */
+        @media screen and (max-width: 500px) {
+
+            .navbar {
+                display: none;
+            }
+
+            .logo {
+                display: none;
+
+            }
+
+            .member_mobile {
+                display: block;
+                width: 100%;
+                height: 60px;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                background-color: #7B9BCB;
+                z-index: 999;
+
+
+            }
+
+            .member_mobile ul {
+                display: flex;
+                justify-content: space-evenly;
+                padding: 0 0;
+                margin-top: 15px;
+
+            }
+
+            .member_mobile li {
+                list-style: none;
+                width: 30px;
+                height: 30px;
+                object-fit: contain;
+            }
+
+            .member_mobile a img {
+                width: 100%;
+                height: 100%;
+
+                object-fit: contain;
+            }
+
+            .title {
+                margin: 50px auto;
+            }
+
+            .text {
+                width: 85%;
+            }
+
+            .title::after {
+                content: "";
+                background: url("./icon/other_title_use.svg")0 0 no-repeat;
+                display: block;
+                width: 200px;
+                height: 50px;
+                position: absolute;
+                top: 10%;
+                left: 27%;
+
+            }
+
+            .hambuger {
+                display: none;
+            }
+
+            .content {
+                width: 100%;
+                height: 260vh;
+
+
+            }
+
+            .box {
+                width: 85%;
+
+                margin: 30px auto;
+                padding: 0 0;
+            }
+
+            .camping,
+            .cabins {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .camping_title,
+            .cabins_title {
+                margin: 150px 0 0 20px;
+            }
+
+            .conten_text {
+                width: 100%;
+                height: 280px;
+                font-size: 16px;
+                padding: 0 0;
+                margin: 0 0;
+            }
+
+            .button ul {
+                width: 300px;
+                display: grid;
+                grid-template-columns: 300px;
+                Grid-template-rows: 40px 40px 40px 40px;
+                row-gap: 20px;
+                padding: 0 0;
+                margin: 50px auto 0;
+            }
+
+            .button li {
+                /* width: 300px;
+            height: 50px; */
+                background-color: #7B9BCB;
+                border-radius: 50px;
+                list-style-type: none;
+                line-height: 40px;
+                padding-left: 20px;
+
+            }
+
+            .button a {
+                font-size: 20px;
+                color: #E9F8FF;
+                text-decoration: none;
+
+
+
+            }
+
+            .equipment {
+                width: 100%;
+                height: 100px;
+                display: flex;
+                flex-direction: column;
+                margin: 50px auto 50px;
+
+            }
+
+            .equipment_text {
+                width: 100%;
+                height: 100px;
+                display: block;
+                font-size: 24px;
+                margin: 0 0;
+                text-align: center;
+
+            }
+
+            .eq_icon {
+                width: 100%;
+                height: 50px;
+                display: flex;
+
+
+            }
+
+            .eq_icon_1 {
+                width: 50px;
+                height: 50px;
+                background-color: #E9F8FF;
+                margin: 0 10px;
+                border-radius: 10px;
+
+            }
+
+
+
+
+            .img-demo-camping,
+            .img-demo-cabin {
+                width: 100%;
+                height: 200px;
+                padding: 0 0;
+                margin: 0 0;
+            }
+
+            .img-demo-camping img,
+            .img-demo-cabin img {
+                width: 100%;
+                height: 100%;
+
+
+            }
+
+            .img-row-camping,
+            .img-row-cabin {
+                width: 50px;
+                height: 50px;
+
+            }
+
+            .img-row-camping img,
+            .img-row-cabin img {
+                width: 100%;
+                height: 100%;
+
+            }
+
+            .img-wrap {
+                justify-content: space-evenly;
+
+            }
+
+
+
+            .a1::before,
+            .a2::before,
+            .a3::before,
+            .a4::before,
+            .a5::before,
+            .a6::before,
+            .a7::before,
+            .a8::before {
+                left: 70%;
+                font-size: 16px;
+                background: url("./icon/arrow.svg") 43px 18px no-repeat;
+                width: 100px;
+
+            }
+
+
+
+            .footer {
+                width: 100%;
+                height: 300px;
+
+                background: url("./icon/other_footer_bgc.svg") -50px 140px no-repeat;
+                background-size: 170%;
+
+            }
+
+            .hambuger {
+                display: none;
+            }
+
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hambuger">
+        <ul class="hambuger_use">
+
+            <li class=""><a href="">住宿 <h4>camping/cabins</h4></a></li>
+            <li class=""><a href="">美食<h4>food</h4></a> </li>
+            <li class=""><a href="./rent.html">租借器材<h4>rent equipment</h4></a></li>
+            <li class=""><a href="">美景<h4>view</h4></a></li>
+
+
+
+        </ul>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="navbar ">
+
+
+                <div class="logo"><img src="./icon/small_logo.svg" alt=""></div>
+                <ul>
+                    <li class="nav"><a href="">住宿 <h5>camping/cabins</h5></a></li>
+                    <li class="nav"><a href="">美食<h5>food</h5></a> </li>
+                    <li class="nav"><a href="./rent.html">租借器材<h5>rent equipment</h5></a></li>
+                    <li class="nav"><a href="">美景<h5>view</h5></a></li>
+
+                </ul>
+                <div class="member">
+
+                    <li><a class="home" href="./page1.html"><img src="./icon/home.svg" alt=""></a></li>
+                    <li><a class="love" href=""><img src="./icon/love.svg" alt=""></a></li>
+
+                    <li><a class="search" href=""><img src="./icon/search.svg" alt=""></a></li>
+
+
+
+                </div>
+            </div>
+            <div class="member_mobile">
+                <ul>
+                    <li><a class="mobile_home" href="./page1.html"><img src="./icon/home.svg" alt=""></a></li>
+                    <li><a class="mobile_love" href=""><img src="./icon/love.svg" alt=""></a></li>
+                    <li><a class="mobile_search" href=""><img src="./icon/search.svg" alt=""></a></li>
+
+                    <li class="icon_ham"><img src="./icon/hambuger.svg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <div class="title">住宿</div>
+        <div class="text">營主營區總共劃分了12個區，另有森林全木的小木屋提供住宿，可在森活渡假村的朋友搗麻糬、烤蛇餅，或者跟著營主導覽賞花賞螢。
+        </div>
+        <div class="content">
+
+            <div class="camping_title">營地 </div>
+            <div class="camping">
+                <div class="box">
+                    <div class="conten_text">和家人和朋友一起在Konashidaira享受Kamikochi的自然風光， Konashidaira是另一個可以俯瞰穗高岩壁的地方。
+                        它也是團體夏令營之旅，初中和高中學生的夏令營訓練以及森林課程的理想場所。
+                        還提供永久性帳篷，雜貨，炊具和燃料，因此您可以空手來露營。</div>
+                    <div class="button">
+                        <ul>
+                            <li class="a1"><a href="">帶上你帳篷</a></li>
+                            <li class="a2"><a href="">幫你搭好帳篷</a></li>
+                            <li class="a3"><a href="">帶上你帳篷(包區)</a></li>
+                            <li class="a4"><a href="">幫你搭好帳篷(包區)</a></li>
+                        </ul>
+                    </div>
+                    <div class="equipment">
+                        <div class="equipment_text">設備</div>
+                        <div class="eq_icon">
+                            <div class="eq_icon_1"><img src="./icon/wc.svg" alt=""></div>
+                            <div class="eq_icon_1"><img src="./icon/water.svg" alt=""></div>
+                            <div class="eq_icon_1"><img src="./icon/spoon-knife.svg" alt=""></div>
+                            <div class="eq_icon_1"><img src="./icon/refrigerator.svg" alt=""></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="pic">
+                    <div class="col-12">
+                        <div class="img-demo-camping">
+                            <img src="./images/camping_1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-12 ">
+                        <div class="img-wrap d-flex ">
+                            <div class="img-row-camping"><img src="./images/camping_2.jpg" alt=""></div>
+                            <div class="img-row-camping"><img src="./images/camping_3.jpg" alt=""></div>
+                            <div class="img-row-camping"><img src="./images/camping_4.jpg" alt=""></div>
+                            <div class="img-row-camping"><img src="./images/camping_5.jpg" alt=""></div>
+                            <div class="img-row-camping"><img src="./images/camping_1.jpg" alt=""></div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="cabins_title">木屋</div>
+                <div class="cabins">
+                    <div class="box">
+                        <div class="conten_text">和家人和朋友一起在Konashidaira享受Kamikochi的自然風光，Konashidaira是另一個可以俯瞰穗高岩壁的地方。
+                            它也是團體夏令營之旅，初中和高中學生的夏令營訓練以及森林課程的理想場所。
+                            還提供永久性帳篷，雜貨，炊具和燃料，因此您可以空手來露營。</div>
+                        <div class="button">
+                            <ul>
+                                <li class="a5"><a href="">灌木叢生A棟</a></li>
+                                <li class="a6"><a href="">涓涓細流C棟</a></li>
+                                <li class="a7"><a href="">森山密林B棟</a></li>
+                                <li class="a8"><a href="">小溪碧流D棟</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pic">
+                        <div class="col-12">
+                            <div class="img-demo-cabin">
+                                <img src="./images/cabin_1.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="img-wrap d-flex">
+                                <div class="img-row-cabin"><img src="./images/cabin_2.jpg" alt=""></div>
+                                <div class="img-row-cabin"><img src="./images/cabin_3.jpg" alt=""></div>
+                                <div class="img-row-cabin"><img src="./images/cabin_4.jpg" alt=""></div>
+                                <div class="img-row-cabin"><img src="./images/cabin_5.jpg" alt=""></div>
+                                <div class="img-row-cabin"><img src="./images/cabin_1.jpg" alt=""></div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer"></div>
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.hambuger').hide();
+
+            $('.icon_ham').click(function () {
+                $('.hambuger').toggle();
+                // return false;
+
+
+
+
+
+            });
+
+
+        });
+        $('.img-row-camping img').click(function () {
+            let imgSrc = $(this).attr('src');
+            $('.img-demo-camping img').attr('src', imgSrc);
+        })
+        $('.img-row-cabin img').click(function () {
+            let imgSrc = $(this).attr('src');
+            $('.img-demo-cabin img').attr('src', imgSrc);
+        })
+    </script>
+</body>
+
+</html>

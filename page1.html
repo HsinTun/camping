@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>camping</title>
+    <link rel="stylesheet" href="./Normalize.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <style>
+        :root {
+            --bor: 1px solid red;
+
+
+
+        }
+
+        body {
+            background-color: #FFF7EE;
+
+        }
+
+
+
+        .logo {
+            width: 100%;
+            height: 20vh;
+            z-index: 97;
+            margin: 350px 0;
+            position: absolute;
+
+
+
+        }
+
+        .logo img {
+            width: 40%;
+            position: relative;
+            top: calc(50% - 10vh);
+            left: calc(50% - 10vh);
+            object-fit: contain;
+
+        }
+
+
+        .banner {
+            width: 100%;
+            height: 99vh;
+
+
+
+
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .we_buse,
+        .member {
+            display: none;
+        }
+
+        .member_barfojq {
+            position: fixed;
+            z-index: 99;
+        }
+
+        .navbar {
+            width: 100%;
+            padding: 0 0;
+            z-index: 98;
+
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+        }
+
+        .mobile_use {
+            width: 100%;
+            height: 90px;
+            background-color: #7B9BCB;
+
+            position: fixed;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 0 0;
+
+
+
+
+        }
+
+        .mobile_use li {
+            width: 30px;
+            height: 30px;
+
+            list-style-type: none;
+            position: relative;
+            top: 10px;
+
+
+
+        }
+
+        .mobile_use li img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+
+
+        .inside_content {
+            /* border: var(--bor); */
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+
+
+
+
+        .l_box {
+            padding: 0 20px;
+        }
+
+        .tent_white {
+            /* border: var(--bor); */
+            max-width: 250px;
+            height: 450px;
+            margin: 30px 0px;
+            border-radius: 30px;
+            overflow: hidden;
+
+
+        }
+
+        .tent_white img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+
+        .paly_son_mother {
+            /* border: var(--bor); */
+            width: 100%;
+            height: 300px;
+            margin: 30px 0;
+
+
+
+        }
+
+        .paly_son_mother img {
+            width: 100%;
+            height: 100%;
+
+        }
+
+
+
+        .paly_water {
+            /* border: var(--bor); */
+            width: 300px;
+            height: 200px;
+            margin: 30px auto;
+            border-radius: 30px;
+            overflow: hidden;
+
+        }
+
+        .paly_water img {
+            width: 100%;
+        }
+
+        .food_cook_up {
+            position: relative;
+            z-index: 2;
+            width: 200px;
+            height: 200px;
+            border-radius: 30px;
+            overflow: hidden;
+            margin: 50px;
+
+        }
+
+
+
+        .food_cook_up img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+
+        }
+
+
+        .top_title,
+        .lightblue_title {
+            /* border: var(--bor); */
+            width: 100%;
+            color: #BACCE6;
+            font-size: 35px;
+            font-family: Noto Sans TC;
+            margin: -20px 0 5px 0;
+            padding: 0 20px;
+        }
+
+        .lightblue_title {
+            color: #E9F8FF;
+
+        }
+
+        .top_title::before,
+        .lightblue_title::before {
+            content: "";
+            /* border: var(--bor); */
+            background: url('./icon/tree.svg') 0 0 no-repeat;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+
+
+        }
+
+        .top_text,
+        .m_text,
+        .r_text,
+        .lightblue_Text,
+        .Text {
+            /* border: var(--bor); */
+            color: #7B9BCB;
+            font-family: Noto Sans TC;
+            font-size: 16px;
+            letter-spacing: 1px;
+            padding: 0 20px;
+
+
+        }
+
+        .top_text {
+            /* border: var(--bor); */
+            /* width: 400px; */
+            height: 8vh;
+            padding: 0 20px;
+
+        }
+
+
+        .m_text {
+            width: 70%;
+            height: 10vh;
+            margin: 50px 0 0 30px;
+
+
+        }
+
+        .r_text {
+            width: 70%;
+            height: 15vh;
+            margin: 0px auto;
+
+        }
+
+        .top_content {
+            margin-top: 200px;
+
+        }
+
+
+        .top_content::after {
+            content: "";
+            background: url("./icon/content_mountain.svg") 0 0 no-repeat;
+            background-size: cover;
+            display: block;
+            width: 100%;
+            height: 100px;
+            bottom: 0;
+
+        }
+
+        .middle_content {
+
+            width: 100%;
+            background-color: #BACCE6;
+            padding-right: 0;
+
+
+
+        }
+
+        .middle_content::after {
+            content: "";
+            background: url("./icon/content_mountain_2.svg") 0 0 no-repeat;
+            background-size: cover;
+            display: block;
+            width: 100%;
+            height: 100px;
+
+
+        }
+
+        .night_pic {
+            /* border: var(--bor); */
+            padding-top: 50px;
+
+        }
+
+        .night_1,
+        .night_2,
+        .night_3 {
+            width: 300px;
+            height: 300px;
+            border-radius: 10%;
+            margin-top: 30px;
+            -webkit-mask-image: url('./icon/mask-06-06.svg');
+            overflow: hidden;
+            margin: 0 auto;
+
+
+        }
+
+        .night_1 img,
+        .night_2 img,
+        .night_3 img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: -60px -30px;
+            object-fit: cover;
+        }
+
+
+
+        h3 {
+            width: 320px;
+            color: #E9F8FF;
+            font-size: 16px;
+            font-family: Noto Sans TC;
+            font-weight: 400;
+            margin: 100px auto;
+            /* text-align: center; */
+            line-height: 30px;
+
+
+
+
+        }
+
+
+
+
+        .parallax_scrollinr {
+            width: 100%;
+            height: 30vh;
+            background: url('./images/tent2_blue.jpg') -500px -100px no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+
+        }
+
+
+
+
+
+        .parallax_scrollinr img {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .bottom_content {
+            width: 100%;
+            /* height: 2100px; */
+
+
+        }
+
+        .bottom_content::after {
+            content: "";
+            background: url("./icon/footer_mountain.svg") 0 0 no-repeat;
+            background-size: cover;
+            display: block;
+            width: 100%;
+            height: 50px;
+            position: relative;
+            top: 11%;
+
+        }
+
+        .title_button li {
+            background-color: #7B9BCB;
+            color: #E9F8FF;
+            border-radius: 50px;
+            position: relative;
+            background-size: contain;
+            width: 200px;
+            height: 40px;
+            top: 250px;
+            left: calc(50% - 100px);
+        }
+
+        .title_button a {
+            color: #E9F8FF;
+
+        }
+
+
+
+
+        .Text {
+            font-size: 16px;
+            padding: 0 20px 0 30px;
+
+        }
+
+
+        .title_food,
+        .title_sleep,
+        .title_tool,
+        .title_view {
+
+            width: 100%;
+            height: 25vh;
+            margin: 0 auto;
+            padding-top: 100px;
+
+
+        }
+
+        .title_food img,
+        .title_sleep img,
+        .title_tool img,
+        .title_view img {
+
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .food_pic,
+        .sleep_pic,
+        .tool_pic,
+        .view_pic {
+            display: flex;
+            margin: 30px;
+            /* border: var(--bor); */
+        }
+
+
+        .food_enjoy,
+        .food_cook,
+        .food_box,
+        .sleep_1,
+        .sleep_2,
+        .sleep_3,
+        .tool_1,
+        .tool_2,
+        .tool_3,
+        .view_1,
+        .view_2,
+        .view_3 {
+            width: 30vw;
+            height: 10vh;
+
+        }
+
+        .food_enjoy img,
+        .food_cook img,
+        .food_box img,
+        .sleep_1 img,
+        .sleep_2 img,
+        .sleep_3 img,
+        .tool_1 img,
+        .tool_2 img,
+        .tool_3 img,
+        .view_1 img,
+        .view_2 img,
+        .view_3 img {
+            width: 100%;
+            height: 100%;
+
+        }
+
+
+
+        .map {
+            /* margin-top: 100px; */
+            width: 100%;
+            height: 30vh;
+            filter: hue-rotate(40deg);
+        }
+
+
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .footer {
+            width: 100%;
+            height: 70vh;
+            background: #7B9BCB;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        .inf {
+            /* border: var(--bor); */
+            width: 50%;
+
+        }
+
+        .small_logo {
+            margin: 20px 0 0 60px;
+            width: 20vw;
+            height: 10vh;
+            display: inline-block;
+            /* border: var(--bor); */
+        }
+
+        .small_logo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .add,
+        .photo {
+            margin: 5px 0px 0 40px;
+            color: #BACCE6;
+            font-size: 12px;
+            font-family: Noto Sans TC;
+
+            display: inline-block;
+
+        }
+
+
+        .add {
+            margin: 25px 0px 0 40px;
+            display: inline-block;
+        }
+
+        .add::before {
+            content: "";
+            background: url("./icon/location.svg") 0px 0 no-repeat;
+            background-size: contain;
+            width: 3.5%;
+            height: 2vh;
+            position: absolute;
+            left: 6%;
+
+        }
+
+        .photo::before {
+            content: "";
+            background: url("./icon/phone.svg") 0px 0 no-repeat;
+            background-size: contain;
+            width: 3.5%;
+            height: 2vh;
+            position: absolute;
+            left: 6%;
+
+        }
+
+        .sent {
+            border-radius: 0 35% 35% 0;
+            background-color: #BACCE6;
+            border: none;
+            margin-left: 5px;
+
+        }
+
+        .emailbar {
+            display: flex;
+        }
+
+        .email {
+
+            width: 50%;
+            margin: 30px 0 0 20px;
+            border: none;
+
+        }
+
+        .mediainformation {
+            display: flex;
+        }
+
+        .socialmedia {
+            /* border: var(--bor); */
+            color: #E9F8FF;
+            font-family: Segoe UI;
+            display: grid;
+            grid-template-columns: 10vw 30vw;
+            Grid-template-rows: 4vh 4vh 4vh 4vh 4vh;
+            margin: 70px 0 0 20px;
+
+
+
+
+        }
+
+        .ig,
+        .fb,
+        .twi,
+        .whatup,
+        .yt {
+            width: 70%;
+        }
+
+        .ig img,
+        .fb img,
+        .twi img,
+        .whatup img,
+        .yt img {
+            width: 90%;
+            object-fit: cover;
+
+        }
+
+        .booking {
+            width: 250px;
+            height: 100px;
+            margin: 200px auto 0;
+
+        }
+
+        .booking img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .bookingbtn {
+
+            margin: 0px auto;
+            border-radius: 50px;
+
+        }
+
+        .container-fluid li {
+            width: 220px;
+            height: 40px;
+            background-color: #7B9BCB;
+            text-align: center;
+            list-style: none;
+            justify-content: center;
+            line-height: 40px;
+
+
+
+        }
+
+        .bookingbtn a {
+            display: block;
+            font-size: 16px;
+            color: #E9F8FF;
+            font-family: Noto Sans TC;
+            text-decoration: none;
+
+
+        }
+
+        .an1234 {
+            display: flex;
+            justify-content: center;
+            transform: translateY(40px);
+
+        }
+
+        .an_1,
+        .an_2,
+        .an_3,
+        .an_4 {
+            width: 60px;
+            height: 60px;
+
+
+
+        }
+
+        .an_1 img,
+        .an_2 img,
+        .an_3 img,
+        .an_4 img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+
+        }
+
+        .anlove1234 {
+            display: none;
+        }
+
+        /* jq */
+        .icon_ham {
+            transform: rotate(0deg);
+        }
+
+
+        .hambuger {
+            background-color: #E9F8FF;
+            width: 100%;
+            height: 99vh;
+            position: fixed;
+            z-index: 98;
+            opacity: 0.9;
+
+
+        }
+
+
+
+
+        .hambuger_use {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 0;
+
+
+        }
+
+        .hambuger_use li {
+            width: 200px;
+            font-size: 22px;
+            text-decoration: none;
+            font-family: Noto Sans TC;
+            /* text-align: center; */
+            /* margin-top: 10px; */
+            list-style-type: none;
+            margin-top: 30px;
+            border-bottom: 1px solid #BACCE6;
+        }
+
+        .hambuger_use a {
+            color: #7B9BCB;
+            display: block;
+            text-align: center;
+
+
+
+
+
+        }
+
+        .hambuger_use h4 {
+            color: #7B9BCB;
+            font-size: 18px;
+            font-weight: 400;
+            font-family: 'Segoe UI';
+            text-align: center;
+
+
+        }
+
+        .animate__animated.animate__bounce {
+            --animate-duration: .8s;
+        }
+
+
+        /* 第一頁 */
+        @media screen and (min-width: 768px) {
+            .mobile_use {
+                display: none;
+            }
+
+            body {
+                background-color: #FFF7EE;
+
+            }
+
+            header {
+                background-color: #FFF7EE;
+                width: 100%;
+                height: 99vh;
+            }
+
+            .loge_member {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 100px;
+
+            }
+
+            .logo {
+                width: 400px;
+                height: 1000px;
+                margin: 0 0;
+
+
+            }
+
+            .logo img {
+                width: 50%;
+
+                object-fit: cover;
+                margin-top: 400px;
+
+            }
+
+            .logoforjq {
+                width: 100px;
+                height: 100px;
+                background: url("./icon/logo.svg") 0 0 no-repeat;
+                background-size: contain;
+                position: absolute;
+                left: 100px;
+                top: 120px;
+                z-index: 98;
+            }
+
+            .member {
+                width: 240px;
+                height: 40px;
+                display: grid;
+                grid-template-columns: 60px 60px 60px;
+                Grid-template-rows: 80px;
+                margin-left: -10px;
+
+
+            }
+
+            .home {
+                width: 2vw;
+                height: 4vh;
+                background: url("./icon/home.svg") center center no-repeat;
+                margin: 0 0;
+                background-size: contain;
+            }
+
+            .love {
+                width: 2vw;
+                height: 3.5vh;
+                background: url("./icon/love.svg") center center no-repeat;
+                margin: 0 0;
+                background-size: contain;
+            }
+
+            .search {
+                width: 2vw;
+                height: 4vh;
+                background: url("./icon/search.svg") center center no-repeat;
+                margin: 0 0;
+                background-size: contain;
+            }
+
+            .member a img {
+                width: 100%;
+                height: 100%;
+            }
+
+
+            .banner {
+                width: 1600px;
+                height: 830px;
+                border-radius: 50px;
+                overflow: hidden;
+                position: relative;
+                top: -50px;
+                left: -100px;
+                animation-name: banneran;
+                animation-duration: 2s;
+            }
+
+            .banner img {
+                animation-name: banneran;
+                animation-duration: 2s;
+                animation-fill-mode: forwards;
+            }
+
+
+
+
+            .navbar {
+                display: block;
+                width: 100%;
+                height: 200px;
+                background: url("./icon/header_mountain.svg") 0 -100px no-repeat;
+                background-size: cover;
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                padding: 0 0;
+                z-index: 97;
+
+            }
+
+
+
+            .we_buse {
+                display: block;
+                list-style-type: none;
+                display: flex;
+                justify-content: center;
+                margin: 120px 0px 0 500px;
+
+
+            }
+
+            .nav {
+
+                text-decoration: none;
+                font-family: Noto Sans TC;
+                display: grid;
+                grid-template-columns: 200px;
+                Grid-template-rows: 100px;
+                width: 180px;
+                height: 100px;
+                justify-content: center;
+                transition: .3s;
+
+
+
+
+            }
+
+            .we_buse li a {
+                color: #7B9BCB;
+                font-size: 24px;
+                text-decoration: none;
+                font-family: Segoe UI;
+                text-align: center;
+                margin-top: 10px;
+                /* border: var(--bor); */
+
+
+
+            }
+
+            .we_buse li a:hover {
+                color: #BACCE6;
+
+            }
+
+            .we_buse h5 {
+                color: #BACCE6;
+                font-size: 20px;
+                font-family: Segoe UI;
+                font-weight: 400;
+
+
+            }
+
+            .fixed {
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                transform: translatey(-115px);
+
+
+
+            }
+
+
+
+
+        }
+
+
+        @media screen and (min-width: 768px) {
+
+            .hambuger {
+                display: none;
+            }
+
+            .top_content {
+                /* margin-top: 100px; */
+                background-color: #FFF7EE;
+
+
+            }
+
+            .top_content::after {
+                content: "---";
+                background: url("./icon/content_mountain.svg") 0 0 no-repeat;
+                background-size: cover;
+                display: block;
+                width: 100%;
+                height: 400px;
+
+
+
+            }
+
+            .inside_content {
+                /* border: var(--bor); */
+                margin: 150px auto;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+
+            }
+
+            .l_box,
+            .m_box,
+            .r_box {
+                /* border: var(--bor); */
+                /* margin: 50px 50px; */
+
+            }
+
+            .top_title,
+            .lightblue_title {
+                width: 500px;
+                margin-left: 25%;
+                font-size: 35px;
+
+            }
+
+            .top_text,
+            .lightblue_Text {
+                width: 600px;
+                margin-left: 25%;
+                font-size: 20px;
+
+
+            }
+
+            .lightblue_title,
+            .lightblue_Text {
+                margin-left: 15%;
+                margin-top: 15px;
+                color: #E9F8FF;
+
+            }
+
+
+            .top_title::after {
+                /* border: var(--bor); */
+                content: url('icon/moon.svg');
+                background-size: contain;
+                top: 0px;
+                left: 170%;
+                position: relative;
+            }
+
+            .tent_white {
+                padding: 0 0;
+                margin: 0 0;
+                min-width: 250px;
+                min-height: 450px;
+
+            }
+
+            .m_text {
+                margin: 50px 0 0 0;
+                width: 300px;
+                padding: 0 0;
+                font-size: 20px
+            }
+
+            .paly_son_mother {
+                width: 450px;
+                height: 300px;
+                border-radius: 30px;
+                overflow: hidden;
+                margin-top: 100px;
+
+            }
+
+            .r_box {
+                padding-left: 20px;
+            }
+
+            .paly_water {
+                width: 350px;
+                height: 230px;
+                margin: -60px 0 0 0;
+            }
+
+            .r_text {
+                width: 300px;
+                margin: 120px 0 0 0;
+                padding: 0 0;
+                font-size: 20px
+            }
+
+            .food_cook_up {
+                min-width: 270px;
+                min-height: 200px;
+                margin: 100px 0 0 130px;
+            }
+
+            .bleu_mountain {
+                width: 100%;
+                height: 90vh;
+
+                overflow: hidden;
+                margin-top: -800px;
+
+            }
+
+            .bleu_mountain img {
+                width: 100%;
+                height: 100%;
+                object-position: -200px 0;
+                object-fit: cover;
+                object-fit: 100%;
+
+
+            }
+
+
+
+            .night_pic {
+
+                display: flex;
+                flex-direction: row;
+
+
+            }
+
+            .night_1,
+            .night_2,
+            .night_3 {
+                width: 420px;
+                height: 420px;
+
+                -webkit-mask-image: url('./icon/mask-06-06.svg') no-repeat center center/contain;
+            }
+
+            .night_1 {
+                margin-left: 200px;
+                margin-right: 400PX;
+
+            }
+
+            .night_2 {
+                margin: 400px 0px 0 0;
+
+
+
+            }
+
+            .night_3 {
+                margin: 200px 0px 0 0;
+
+
+
+            }
+
+            .night_1 img,
+            .night_2 img,
+            .night_3 img {
+                object-position: -60px -30px;
+
+                width: 100%;
+                height: 100%;
+
+            }
+
+            h3 {
+                width: 700px;
+                color: #E9F8FF;
+                font-size: 22px;
+                font-family: Noto Sans TC;
+                font-weight: 400;
+                margin: 100px auto;
+                /* text-align: center; */
+                line-height: 35px;
+                position: relative;
+                top: -800px;
+                left: 100px;
+
+
+
+            }
+
+
+
+            .middle_content {
+                width: 100%;
+                height: 140vh;
+                margin-top: -40px;
+            }
+
+            .middle_content::after {
+                content: "";
+                background: url("./icon/content_mountain_2.svg") 0 0 no-repeat;
+                background-size: cover;
+                display: block;
+                width: 100%;
+                position: relative;
+                height: 330px;
+                /* border: var(--bor); */
+                top: -450px;
+
+
+
+            }
+
+            .parallax_scrollinr {
+                width: 100%;
+                height: 100vh;
+                background: url("./images/1header.jpg") 0px 0px no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+
+
+            }
+
+            .parallax_scrollinr img {
+                width: 100%;
+                height: 100%;
+
+            }
+
+            .bottom_content {
+                background: none;
+                background-color: #FFF7EE;
+                height: 3000px;
+
+
+            }
+
+            .bottom_content::after {
+                content: "";
+                background: url("./icon/footer_mountain-02.svg") 0px -80px no-repeat;
+                background-size: cover;
+                display: block;
+                width: 100%;
+                position: relative;
+                height: 150px;
+                top: -7.3%;
+
+
+            }
+
+
+
+            .food,
+            .sleep {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 100%;
+                height: 60vh;
+
+
+            }
+
+            .food {
+                padding: 400px 0;
+
+            }
+
+            .tool,
+            .view {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                flex-direction: row-reverse;
+                background-color: #fff;
+                width: 100%;
+                height: 60vh;
+                align-items: center;
+
+
+
+            }
+
+            .food_article,
+            .sleep_article {
+                margin-left: 250px;
+
+
+
+            }
+
+            .tool_article,
+            .view_article {
+                margin-right: 250px;
+
+
+            }
+
+
+            .title_button {
+                display: flex;
+                align-items: center;
+                margin: 50px auto;
+                border-radius: 50px;
+
+
+
+            }
+
+
+            .title_button li {
+                width: 260px;
+                height: 40px;
+                background-color: #7B9BCB;
+                text-align: center;
+                list-style: none;
+                padding: 0 0;
+            }
+
+            .title_button a {
+                font-family: Segoe UI;
+                display: block;
+                font-size: 22px;
+                color: #E9F8FF;
+                text-decoration: none;
+                padding: 0 0;
+
+
+
+
+
+
+            }
+
+            .title_button li a:hover {
+                width: 260px;
+                height: 40px;
+                background-color: #E9F8FF;
+                text-align: center;
+                list-style: none;
+                color: #7B9BCB;
+                border-radius: 50px;
+                padding: 0 0;
+                transition: .5s;
+
+
+
+            }
+
+
+
+            .food_enjoy,
+            .food_cook,
+            .food_box,
+            .sleep_1,
+            .sleep_2,
+            .sleep_3,
+            .tool_1,
+            .tool_2,
+            .tool_3,
+            .view_1,
+            .view_2,
+            .view_3 {
+                width: 250px;
+                height: 300px;
+                border-radius: 20px;
+                overflow: hidden;
+
+                margin-left: 10px;
+            }
+
+            .food_enjoy img:hover,
+            .food_cook img:hover,
+            .food_box img:hover,
+            .sleep_1 img:hover,
+            .sleep_2 img:hover,
+            .sleep_3 img:hover,
+            .tool_1 img:hover,
+            .tool_2 img:hover,
+            .tool_3 img:hover,
+            .view_1 img:hover,
+            .view_2 img:hover,
+            .view_3 img:hover {
+                transform: scale(1.1);
+                transition: .7s;
+                opacity: 0.5;
+
+
+            }
+
+            .food_enjoy img,
+            .food_cook img,
+            .food_box img,
+            .sleep_1 img,
+            .sleep_2 img,
+            .sleep_3 img,
+            .tool_1 img,
+            .tool_2 img,
+            .tool_3 img,
+            .view_1 img,
+            .view_2 img,
+            .view_3 img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+            }
+
+            .Text {
+                font-size: 20px;
+                padding: 0 0;
+                width: 500PX;
+
+
+
+
+            }
+
+
+            .title_food,
+            .title_sleep,
+            .title_tool,
+            .title_view {
+
+                width: 100px;
+                height: 100px;
+                padding: 0 0;
+                margin: 0 0 20px 0;
+
+            }
+
+            .title_food img,
+            .title_sleep img,
+            .title_tool img,
+            .title_view img {
+
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+
+            }
+
+            .footer {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                height: 45vh;
+
+            }
+
+            .map {
+                width: 400px;
+                height: 300px;
+                margin: 0 100px;
+                border-radius: 30px;
+                overflow: hidden;
+
+            }
+
+
+
+            .mediainformation {
+                display: flex;
+                margin: 0 0;
+
+            }
+
+            .inf {
+                width: 400px;
+
+
+            }
+
+            .small_logo {
+                margin: 0 auto;
+                width: 300px;
+                height: 100px;
+                margin-top: 30px;
+
+            }
+
+            .add,
+            .photo {
+                display: inline-block;
+                font-size: 20px;
+                margin-left: 90px;
+            }
+
+            .add::before {
+                content: "";
+                background: url("./icon/location.svg") 0px 5px no-repeat;
+                background-size: 80%;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                left: 49.5%;
+
+            }
+
+            .photo::before {
+                content: "";
+                background: url("./icon/phone.svg") 0px 5px no-repeat;
+                background-size: 70.5%;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                left: 49.5%;
+
+
+
+            }
+
+            .sent {
+                margin-left: 50px;
+                border-radius: 0 40% 40% 0;
+
+
+            }
+
+            .socialmedia {
+                /* border: var(--bor); */
+                color: #E9F8FF;
+                font-family: Segoe UI;
+                display: grid;
+                grid-template-columns: 40px 200px;
+                Grid-template-rows: 40px 40px 40px 40px 40px;
+                margin: 40px 0 0 50px;
+                font-size: 20px;
+                width: 300px;
+
+
+
+
+            }
+
+            .ig,
+            .fb,
+            .twi,
+            .whatup,
+            .yt {
+                width: 80%;
+
+            }
+
+            .ig img,
+            .fb img,
+            .twi img,
+            .whatup img,
+            .yt img {
+                width: 90%;
+                object-fit: cover;
+
+            }
+
+            .booking {
+                width: 550px;
+                height: 100px;
+                margin: 100px auto 0;
+
+            }
+
+            .booking img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            .bookingbtn {
+
+                margin: 50px auto;
+                border-radius: 50px;
+
+            }
+
+            .container-fluid li {
+                width: 260px;
+                height: 40px;
+                background-color: #7B9BCB;
+                text-align: center;
+                list-style: none;
+
+
+            }
+
+            .bookingbtn a {
+                display: block;
+                font-size: 22px;
+                color: #E9F8FF;
+                font-family: Noto Sans TC;
+                text-decoration: none;
+
+            }
+
+
+
+            .container-fluid li a:hover {
+                width: 260px;
+                height: 40px;
+                background-color: #E9F8FF;
+                text-align: center;
+                list-style: none;
+                color: #7B9BCB;
+                border-radius: 50px;
+                transition: .5s;
+
+
+            }
+
+            .an1234 {
+                display: flex;
+
+                justify-content: center;
+                overflow: hidden;
+                transform: translateY(20px);
+
+
+
+
+            }
+
+            .an_1,
+            .an_2,
+            .an_3,
+            .an_4 {
+                width: 220px;
+                height: 300px;
+
+
+            }
+
+            .an_1 img,
+            .an_2 img,
+            .an_3 img,
+            .an_4 img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+
+            }
+
+            .an_1 :hover,
+            .an_2 :hover,
+            .an_3 :hover,
+            .an_4 :hover {
+                transform: translateY(-50px);
+                transition: .5s;
+            }
+
+            .anlove1234 {
+                display: flex;
+                justify-content: center;
+                transform: translateY(-80px);
+                transition: .6s;
+                opacity: 0;
+
+            }
+
+            .an_love1,
+            .an_love2,
+            .an_love3,
+            .an_love4 {
+                width: 240px;
+                height: 30px;
+            }
+
+            .an_love1 img,
+            .an_love2 img,
+            .an_love3 img,
+            .an_love4 img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .an_love2,
+            .an_love3 {
+                transform: translateY(10px);
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+        <div class="hambuger">
+            <ul class="hambuger_use">
+
+                <li class=""><a href="./sleep.html">住宿 <h4>camping/cabins</h4></a></li>
+                <li class=""><a href="">美食<h4>food</h4></a> </li>
+                <li class=""><a href="./rent.html">租借器材<h4>rent equipment</h4></a></li>
+                <li class=""><a href="">美景<h4>view</h4></a></li>
+
+
+
+            </ul>
+        </div>
+        <div class="loge_member">
+            <div class="logo"><img src="./icon/logo.svg" alt=""></div>
+            <ul class="member">
+                <a class="home" href=""></a>
+                <a class="love" href=""></a>
+                <a class="search" href=""></a>
+            </ul>
+        </div>
+
+        <div class="banner"><img src="./icon/banner.svg" alt="">
+
+            <div class="navbar">
+
+                <ul class="we_buse">
+                    <div class="logofor"></div>
+
+                    <li class="nav"><a href="./sleep.html">住宿 <h5>camping/cabins</h5></a></li>
+                    <li class="nav"><a href="">美食<h5>food</h5></a> </li>
+                    <li class="nav"><a href="./rent.html">租借器材<h5>rent equipment</h5></a></li>
+                    <li class="nav"><a href="">美景<h5>view</h5></a></li>
+
+
+
+                </ul>
+
+                <ul class="mobile_use">
+
+                    <li><a href=""><img src="./icon/home.svg" alt=""></a></li>
+
+                    <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                    <li><a href=""><img src="./icon/search.svg" alt=""></a></li>
+                    <li class="icon_ham"><img src="./icon/hambuger.svg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+    </header>
+
+
+    <div class="contnet">
+        <div class="top_content">
+            <div class="top_title">享受自然</div>
+            <div class="top_text">森林靜靜地擁抱著你。離開雜亂的都市後，你會發現許多自然在呼喚你。</div>
+
+            <div class="inside_content">
+
+                <div class="l_box">
+                    <div class="tent_white " data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"><img
+                            src="./images/tent_white.jpg" alt=""></div>
+                </div>
+
+
+                <div class="m_box">
+                    <div class="m_text">與家人和朋友一起度過美好時光，在森活度假村中享受安靜的森林</div>
+                    <div class="paly_son_mother" data-aos="fade-up" data-aos-duration="3000">
+                        <img src="./images/paly_son_mother.jpg" alt="">
+                    </div>
+                </div>
+
+
+                <div class="r_box">
+                    <div class="paly_water" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"><img
+                            src="./images/paly_water.jpg" alt=""></div>
+                    <div class="r_text">忘記您的日常生活 <br>
+                        充分享受到許多人保護的"大自然的寶藏"森林。</div>
+                    <div class="food_cook_up" data-aos="fade-up" data-aos-duration="3000">
+                        <img src="./images/food_cook.jpg" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+    <div class="middle_content">
+
+
+        <div class="lightblue_title">在星空下</div>
+        <div class="lightblue_Text">聆聽昆蟲的聲音，風的聲音和沼澤的聲音。<br>
+            喚醒鳥兒的聲音，看著早晨的陽光照亮清澈的早晨空氣中的穗高</div>
+
+
+
+        <div class="night_pic">
+
+            <div class="night_1" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"><img
+                    src="./images/night_1.jpg" alt=""></div>
+
+            <div class="night_2" data-aos="fade-up" data-aos-duration="3000"><img src="./images/night_2.jpg" alt="">
+            </div>
+
+            <div class="night_3" data-aos="fade-up" data-aos-duration="3000"><img src="./images/night_3.jpg" alt="">
+            </div>
+
+
+        </div>
+        <h3>
+            在晴朗的日子裡，您會看到滿是星空的天空 <br> 彷彿正在傾瀉而下，您將能夠看到銀河系，有時還能射出星星。<br> 您為什麼不在緩慢的流動時間中度過如此奢華的時光，<br> 被天空中的星星包圍？
+            最好的季節是從7月底到8月，那裡有很多晴天，即使到了晚上溫度也不會下降太多。</h3>
+
+
+
+    </div>
+
+    <div class="parallax_scrollinr"></div>
+
+    </div>
+
+    <div class="bottom_content">
+
+        <div class="food">
+            <div class="food_article">
+                <div class="title_button">
+                    <div class="title_food"><img src="./icon/food.svg" alt=""></div>
+                    <li class="btn"><a href=""> more</a></li>
+
+                </div>
+
+                <div class="Text">戶外燒烤所需的各種高山蔬菜、蘑菇、泡麵、罐頭食品等都能在我們園區餐廳找到，周邊幾公里也能找到美食小吃</div>
+            </div>
+
+            <div class="food_pic">
+                <div class="food_enjoy"><img src="./images/food_enjoy.jpg" alt=""></div>
+                <div class="food_cook"><img src="./images/food_cook.jpg" alt=""></div>
+                <div class="food_box"><img src="./images/food_box.jpg" alt=""></div>
+            </div>
+        </div>
+
+        <div class="tool">
+            <div class="tool_article">
+                <div class="title_button">
+                    <div class="title_tool"><img src="./icon/tool.svg" alt=""></div>
+
+                    <li class="btn"><a href="">
+                            more
+                        </a></li>
+                </div>
+
+                <div class="Text">營區有提供大型的器材，如烤肉架、椅子桌子、帳篷、燈具,也設置衛生間、茶水間、室內煮飯區</div>
+            </div>
+
+            <div class="tool_pic">
+                <div class="tool_1"><img src="./images/tool_1.jpg" alt=""></div>
+                <div class="tool_2"><img src="./images/tool_2.jpg" alt=""></div>
+                <div class="tool_3"><img src="./images/tool_3.jpg" alt=""></div>
+            </div>
+        </div>
+        <div class="sleep">
+            <div class="sleep_article">
+                <div class="title_button">
+                    <div class="title_sleep"><img src="./icon/sleep.svg" alt=""></div>
+                    <li class="btn"><a href="">
+                            more
+                        </a></li>
+                </div>
+
+
+                <div class="Text">提供露營區和小木屋區，露營區包括自己做手搭帳棚或是有專人為你準備好，小木屋區設置在自然森林區，每早有鳥語蟲鳴呼喚你</div>
+            </div>
+
+            <div class="sleep_pic">
+                <div class="sleep_1"><img src="./images/sleep_1.jpg" alt=""></div>
+                <div class="sleep_2"><img src="./images/sleep_bed2.jpg" alt=""></div>
+                <div class="sleep_3"><img src="./images/sleep_cabin3.jpg" alt=""></div>
+            </div>
+        </div>
+        <div class="view">
+            <div class="view_article">
+                <div class="title_button">
+                    <div class="title_view"><img src="./icon/view.svg" alt=""></div>
+                    <li class="btn"><a href="">
+                            more
+                        </a></li>
+                </div>
+
+
+                <div class="Text">海拔1200m的水和綠色天堂，梓河的清澈水流，在您面前的穗高山脈的勇敢形象。這是一個在大自然中存活的雲端避暑勝地</div>
+            </div>
+
+            <div class="view_pic">
+                <div class="view_1"><img src="./images/view_1.jpg" alt=""></div>
+                <div class="view_2"><img src="./images/view_2.jpg" alt=""></div>
+                <div class="view_3"><img src="./images/view_3.jpg" alt=""></div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="booking"><img src="./images/footer.png" alt=""></div>
+            <li class="bookingbtn"><a href=""> 預定</a></li>
+
+        </div>
+        <div class="an1234">
+            <div class="an_1"><img src="./images/an_1.png" alt=""></div>
+            <div class="an_2"><img src="./images/an_2.png" alt=""></div>
+            <div class="an_3"><img src="./images/an_3.png" alt=""></div>
+            <div class="an_4"><img src="./images/an_4.png" alt=""></div>
+        </div>
+        <div class="anlove1234">
+            <div class="an_love1"><img src="./icon/an_love.svg" alt=""></div>
+            <div class="an_love2"><img src="./icon/an_love.svg" alt=""></div>
+            <div class="an_love3"><img src="./icon/an_love.svg" alt=""></div>
+            <div class="an_love4"><img src="./icon/an_love.svg" alt=""></div>
+        </div>
+
+    </div>
+
+
+
+    <div class="footer">
+        <div class="map"><iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.0388403963716!2d121.11546295081692!3d24.62234618408904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346845a9b1414941%3A0x25daceae6c283684!2zMzEx5paw56u557ij5LqU5bOw6YSJ56u55p6X5p2R!5e0!3m2!1szh-TW!2stw!4v1615362486259!5m2!1szh-TW!2stw"
+                style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+
+        <div class="mediainformation">
+            <div class="inf">
+                <div class="small_logo"><img src="./icon/small_logo.svg" alt=""></div>
+                <div class="add">北佐區立志路159巷6號</div>
+                <div class="photo">0978345778</div>
+                <div class="emailbar ml-4">
+                    <form class="form-inline">
+
+                        <div class="form-group mb-4 email">
+
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-0 sent">sent</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="socialmedia">
+                <div class="ig"><img src="./icon/instagram.svg" alt=""></div>
+                <div class="ig_text">@25.0073857jpjp</div>
+                <div class="fb"><img src="./icon/facebook.svg" alt=""></div>
+                <div class="fb_text">@25.0073857jpjp</div>
+                <div class="twi"><img src="./icon/twitter.svg" alt=""></div>
+                <div class="twi_text">@25.0073857jpjp</div>
+                <div class="whatup"><img src="./icon/whatsapp.svg" alt=""></div>
+                <div class="whatup_text">@25.0073857jpjp</div>
+                <div class="yt"><img src="./icon/youtube.svg" alt=""></div>
+                <div class="yt_text">@25.0073857jpjp</div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+
+
+        let navTop = $('.navbar').offset().top;
+        console.log('navTop', navTop);
+
+        $(window).scroll(function () {
+
+
+            let scrollTop = $(this).scrollTop();
+
+            console.log('scollTop', $(this).scrollTop());
+            console.log('scrollTop', scrollTop);
+
+
+
+            if (scrollTop >= navTop + 120) {
+                $('.navbar').addClass('fixed');
+                $('.we_buse').css('marginLeft', '0px')
+
+                $('.member').addClass('member_barfojq');
+                $('.logofor').addClass('logoforjq');
+
+
+
+
+            }
+            else {
+                $('.navbar').removeClass('fixed');
+                $('.member').removeClass('member_barfojq');
+                $('.logofor').removeClass('logoforjq');
+                $('.we_buse').css('marginLeft', '500px')
+
+
+
+            }
+            // if (scrollTop = 979) {
+
+            // }
+
+
+
+        });
+
+
+        $(document).ready(function () {
+            $('.hambuger').hide();
+
+            $('.icon_ham').click(function () {
+                $('.hambuger').toggle();
+                // return false;
+
+
+
+
+            });
+
+
+        });
+        AOS.init();
+
+        $('.bookingbtn').mouseenter(function () {
+            $('.anlove1234').css('transform', 'translateY(-300px)');
+            $('.anlove1234').css('opacity', '1');
+
+        });
+        $('.bookingbtn').mouseleave(function () {
+            $('.anlove1234').css('transform', 'translateY(-90px)');
+            $('.anlove1234').css('opacity', '0');
+
+
+        });
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

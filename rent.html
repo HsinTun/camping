@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rent equipment</title>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+
+    <link rel="stylesheet" href="./Normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+
+
+    <style>
+        :root {
+            --bor: 1px solid red;
+
+
+        }
+
+        body {
+            background-color: #FFF7EE;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 90px;
+            background-color: #7B9BCB;
+            padding: 0 0;
+            display: flex;
+            justify-content: space-around;
+
+
+        }
+
+        .logo {
+            width: 130px;
+            height: 90px;
+
+
+
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+
+        }
+
+        .navbar li {
+            list-style: none;
+            margin-top: 20px;
+
+        }
+
+        .navbar ul {
+            display: flex;
+
+            width: 1200px;
+            justify-content: space-evenly;
+            margin: 0 0;
+            text-align: center;
+
+        }
+
+        .navbar li a {
+            font-size: 24px;
+            text-decoration: none;
+            color: #E9F8FF;
+            font-family: Noto Sans TC;
+            font-weight: 300;
+
+        }
+
+        .navbar li a:hover {
+            color: #BACCE6;
+
+        }
+
+        .navbar h5 {
+            font-family: Segoe UI;
+            font-size: 20px;
+            font-weight: 300;
+            margin: 0 0;
+        }
+
+        .member {
+
+            width: 130px;
+            display: flex;
+            justify-content: space-between;
+
+
+
+        }
+
+        .title {
+            width: 40%;
+            margin: 100px auto 0;
+            font-size: 33px;
+            color: #7B9BCB;
+            font-family: Noto Sans TC;
+            text-align: center;
+        }
+
+        .title::after {
+            content: "";
+            background: url("./icon/other_title_use.svg")0 0 no-repeat;
+            display: block;
+            width: 200px;
+            height: 50px;
+            position: absolute;
+            top: 24%;
+            left: 45%;
+            /* border: var(--bor); */
+        }
+
+        .text {
+            width: 30%;
+            color: #7B9BCB;
+            font-family: Noto Sans TC;
+            font-size: 22px;
+            text-align: center;
+            margin: 30px auto 0;
+            letter-spacing: 3px;
+        }
+
+
+
+        .tent_title,
+        .table_title,
+        .light_title,
+        .bbq_title {
+            width: 200px;
+            font-size: 28px;
+            color: #7B9BCB;
+            font-family: Noto Sans TC;
+            margin: 200px 0px -50px 300px;
+
+        }
+
+        .tent_title {
+
+            margin: 50px 0px -50px 300px;
+
+        }
+
+        .tent_title::before,
+        .table_title::before,
+        .light_title::before,
+        .bbq_title::before {
+            content: "";
+            background: url("icon/tree.svg")0 0px no-repeat;
+            display: inline-block;
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+
+            position: relative;
+            top: 10px;
+
+
+        }
+
+
+
+        .content {
+            width: 70%;
+            margin: 100px auto;
+
+        }
+
+
+
+
+        .slick-prev:before,
+        .slick-next:before {
+
+            color: black;
+        }
+
+        .slick-slide {
+            margin: 0px 10px;
+        }
+
+        .slick-slide {
+            transition: all ease-in-out .3s;
+            opacity: .2;
+        }
+
+        .slick-active {
+            opacity: 1;
+        }
+
+        .slick-current {
+            opacity: 1;
+        }
+
+        .footer {
+            width: 100%;
+            height: 450px;
+
+            background: url("./icon/other_footer_bgc.svg") -50px 130px no-repeat;
+            background-size: cover;
+
+
+        }
+
+        .member_mobile {
+            display: none;
+        }
+
+
+
+
+        @media screen and (max-width: 500px) {
+
+            .navbar {
+                display: none;
+            }
+
+            .logo {
+                display: none;
+
+            }
+
+            .member_mobile {
+                display: block;
+                width: 100%;
+                height: 60px;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                background-color: #7B9BCB;
+                z-index: 999;
+
+
+            }
+
+            .member_mobile ul {
+                display: flex;
+                justify-content: space-evenly;
+                padding: 0 0;
+
+            }
+
+            .member_mobile li {
+                list-style: none;
+                width: 30px;
+                height: 30px;
+                object-fit: contain;
+            }
+
+            .member_mobile a img {
+                width: 100%;
+                height: 100%;
+
+                object-fit: contain;
+            }
+
+            .title {
+                margin: 50px auto;
+            }
+
+            .text {
+                width: 85%;
+            }
+
+            .title::after {
+                content: "";
+                background: url("./icon/other_title_use.svg")0 0 no-repeat;
+                display: block;
+                width: 200px;
+                height: 50px;
+                position: absolute;
+                top: 10%;
+                left: 29%;
+
+            }
+
+            .tent_title,
+            .table_title,
+            .light_title,
+            .bbq_title {
+                margin: 150px 0 0 20px;
+            }
+
+            .content {
+                margin: 50px auto;
+            }
+
+            .footer {
+                width: 100%;
+                height: 300px;
+
+                background: url("./icon/other_footer_bgc.svg") -50px 145px no-repeat;
+                background-size: 170%;
+
+            }
+
+
+
+
+
+
+
+        }
+
+        .hambuger {
+            background-color: #E9F8FF;
+            width: 100%;
+            height: 99vh;
+            position: fixed;
+            z-index: 98;
+            opacity: 0.9;
+            margin: 0 0;
+            top: 0;
+            left: 0;
+            display: none;
+
+
+        }
+
+
+
+
+        .hambuger_use {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0;
+            padding: 0 0;
+
+        }
+
+        .hambuger_use li {
+            width: 200px;
+            font-size: 22px;
+            font-family: Noto Sans TC;
+            list-style-type: none;
+            margin-top: 30px;
+            border-bottom: 1px solid #BACCE6;
+            text-decoration: none;
+
+
+        }
+
+        .hambuger_use h4 {
+            color: #7B9BCB;
+            font-size: 18px;
+            font-weight: 400;
+            font-family: 'Segoe UI';
+            text-align: center;
+            margin: 0 0 8px;
+
+        }
+
+        .hambuger_use a {
+            color: #7B9BCB;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+
+
+        }
+
+        .card {
+            width: 100%;
+            height: 350px;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .shop_love {
+            height: 350px;
+            transition: .6s;
+            transform: translateY(0px);
+            background-color: #fff;
+            opacity: 1;
+            opacity: 0.9;
+            overflow: hidden;
+            border-radius: 30px;
+
+
+
+        }
+
+        .shop_love h2 {
+            width: 70%;
+            height: 30px;
+            font-family: Noto Sans TC;
+            margin: 0px auto;
+            color: #7B9BCB;
+            line-height: 35px;
+            padding: 30% 0;
+
+
+        }
+
+        .shop_love ul {
+            width: 99%;
+            height: 90px;
+            padding: 0 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+
+        }
+
+        .shop_love li {
+            width: 30px;
+            height: 30px;
+            list-style: none;
+
+            padding: 0 10px;
+
+
+        }
+
+        .shop_love li img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box {
+            width: 280px;
+            height: 350px;
+            overflow: hidden;
+
+        }
+
+        .box:hover .shop_love {
+            transform: translateY(-350px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hambuger">
+        <ul class="hambuger_use">
+
+            <li class=""><a href="./sleep.html">住宿 <h4>camping/cabins</h4></a></li>
+            <li class=""><a href="">美食<h4>food</h4></a> </li>
+            <li class=""><a href="">租借器材<h4>rent equipment</h4></a></li>
+            <li class=""><a href="">美景<h4>view</h4></a></li>
+
+
+
+        </ul>
+    </div>
+
+
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="navbar ">
+
+
+                <div class="logo"><img src="./icon/small_logo.svg" alt=""></div>
+                <ul>
+                    <li class="nav"><a href="./sleep.html">住宿 <h5>camping/cabins</h5></a></li>
+                    <li class="nav"><a href="">美食<h5>food</h5></a> </li>
+                    <li class="nav"><a href="./rent.html">租借器材<h5>rent equipment</h5></a></li>
+                    <li class="nav"><a href="">美景<h5>view</h5></a></li>
+
+                </ul>
+                <div class="member">
+
+                    <li><a class="home" href="./page1.html"><img src="./icon/home.svg" alt=""></a></li>
+                    <li><a class="love" href=""><img src="./icon/love.svg" alt=""></a></li>
+
+                    <li><a class="search" href=""><img src="./icon/search.svg" alt=""></a></li>
+
+
+
+                </div>
+            </div>
+            <div class="member_mobile">
+                <ul>
+                    <li><a class="mobile_home" href="./page1.html"><img src="./icon/home.svg" alt=""></a></li>
+                    <li><a class="mobile_love" href=""><img src="./icon/love.svg" alt=""></a></li>
+                    <li><a class="mobile_search" href=""><img src="./icon/search.svg" alt=""></a></li>
+
+                    <li class="icon_ham"><img src="./icon/hambuger.svg" alt=""></li>
+                </ul>
+
+            </div>
+
+
+            <div class="title">租借器材</div>
+            <div class="text">嚴選市面上最好的名牌，有露營界的LV之稱的snow peak，日本的第一品牌，台灣市佔率最高的牌子，好搭防水透氣性佳。所有的帳篷皆附地布，營槌及營釘，讓你在使用上得心應手
+            </div>
+
+            <div class="row">
+                <div class="tent">
+                    <div class="tent_title">帳篷</div>
+                    <div class="content tent_content">
+                        <div class="box">
+                            <div class="card"><a href=""><img src="./images/tent_1.jpg" alt=""></a>
+                            </div>
+                            <div class="shop_love">
+                                <h2>[KZM-BLACK X5]
+                                    別墅帳 2-3人 <br>
+                                    $100 /天</h2>
+                                <ul>
+
+                                    <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                    <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="card"><a href=""><img src="./images/tent_2.png" alt=""> </a>
+                            </div>
+                            <div class="shop_love">
+                                <h2>[KZM-PINK A1]
+                                    別墅帳 4-6人 <br>
+                                    $200 /天</h2>
+                                <ul>
+
+                                    <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                    <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="card"><a href=""><img src="./images/tent_3.jpg" alt=""></a>
+                            </div>
+                            <div class="shop_love">
+                                <h2>[KZM-BLACK X5]
+                                    別墅帳 2-3人 <br>
+                                    $100 /天</h2>
+                                <ul>
+                                    <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                    <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="card"><a href=""><img src="./images/tent_4.jpg" alt=""></a>
+                            </div>
+                            <div class="shop_love">
+                                <h2>[KZM-BLACK X5]
+                                    別墅帳 2-3人 <br>
+                                    $100 /天</h2>
+                                <ul>
+                                    <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                    <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="card"><a href=""><img src="./images/tent_5.jpg" alt=""></a>
+                            </div>
+                            <div class="shop_love">
+                                <h2>[KZM-BLACK X5]
+                                    別墅帳 2-3人 <br>
+                                    $100 /天</h2>
+                                <ul>
+                                    <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                    <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="talbe">
+                    <div class="table_title">桌子&椅子</div>
+                    <div class="content talbe_content">
+                        <div class="box">
+                            <div class="card"><a href=""><img src="./images/chair_1.png" alt=""></a>
+                            </div>
+                            <div class="shop_love">
+                                <h2>[KZM-BLACK X5]
+                                    別墅帳 2-3人 <br>
+                                    $100 /天</h2>
+                                <ul>
+                                    <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                    <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="card"><a href=""><img src="./images/chair_2.jpeg" alt=""> </a>
+                            </div>
+                            <div class="shop_love">
+                                <h2>[KZM-BLACK X5]
+                                    別墅帳 2-3人 <br>
+                                    $100 /天</h2>
+                                <ul>
+                                    <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                    <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="card"><a href=""><img src="./images/chair_3.jpg" alt=""></a>
+                            </div>
+                            <div class="shop_love">
+                                <h2>[KZM-BLACK X5]
+                                    別墅帳 2-3人 <br>
+                                    $100 /天</h2>
+                                <ul>
+                                    <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                    <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="card"><a href=""><img src="./images/chair_4.jpg" alt=""></a>
+                            </div>
+                            <div class="shop_love">
+                                <h2>[KZM-BLACK X5]
+                                    別墅帳 2-3人 <br>
+                                    $100 /天</h2>
+                                <ul>
+                                    <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                    <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="card"><a href=""><img src="./images/table_1.jpg" alt=""></a>
+                            </div>
+                            <div class="shop_love">
+                                <h2>[KZM-BLACK X5]
+                                    別墅帳 2-3人 <br>
+                                    $100 /天</h2>
+                                <ul>
+                                    <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                    <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="card"><a href=""><img src="./images/table_2.jpeg" alt=""></a></div>
+                            <div class="shop_love">
+                                <h2>[KZM-BLACK X5]
+                                    別墅帳 2-3人 <br>
+                                    $100 /天</h2>
+                                <ul>
+                                    <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                    <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="card"><a href=""><img src="./images/table_3.jpg" alt=""></a></div>
+                            <div class="shop_love">
+                                <h2>[KZM-BLACK X5]
+                                    別墅帳 2-3人 <br>
+                                    $100 /天</h2>
+                                <ul>
+                                    <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                    <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="light">
+                <div class="light_title">燈具</div>
+                <div class="content light_content">
+                    <div class="box">
+                        <div class="card"><a href=""><img src="./images/light_1.jpg" alt=""></a></div>
+                        <div class="shop_love">
+                            <h2>[KZM-BLACK X5]
+                                別墅帳 2-3人 <br>
+                                $100 /天</h2>
+
+                            <ul>
+                                <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card"><a href=""><img src="./images/light_2.jpg" alt=""></a></div>
+                        <div class="shop_love">
+                            <h2>[KZM-BLACK X5]
+                                別墅帳 2-3人 <br>
+                                $100 /天</h2>
+                            <ul>
+                                <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card"><a href=""><img src="./images/light_3.jpg" alt=""></a></div>
+                        <div class="shop_love">
+                            <h2>[KZM-BLACK X5]
+                                別墅帳 2-3人 <br>
+                                $100 /天</h2>
+                            <ul>
+                                <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card"><a href=""><img src="./images/light_4.jpg" alt=""></a></div>
+                        <div class="shop_love">
+                            <h2>[KZM-BLACK X5]
+                                別墅帳 2-3人 <br>
+                                $100 /天</h2>
+                            <ul>
+                                <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card"><a href=""><img src="./images/light_5.jpg" alt=""></a></div>
+                        <div class="shop_love">
+                            <h2>[KZM-BLACK X5]
+                                別墅帳 2-3人 <br>
+                                $100 /天</h2>
+                            <ul>
+                                <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card"><a href=""><img src="./images/light_6.jpg" alt=""></a></div>
+                        <div class="shop_love">
+                            <h2>[KZM-BLACK X5]
+                                別墅帳 2-3人 <br>
+                                $100 /天</h2>
+                            <ul>
+                                <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="bbq">
+                <div class="bbq_title">烤肉架</div>
+                <div class="content bbq_content">
+                    <div class="box">
+                        <div class="card"><a href=""><img src="./images/bbq_1.jpg" alt=""></a></div>
+                        <div class="shop_love">
+                            <h2>[KZM-BLACK X5]
+                                別墅帳 2-3人 <br>
+                                $100 /天</h2>
+                            <ul>
+                                <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card"><a href=""><img src="./images/bbq_2.jpg" alt=""></a></div>
+                        <div class="shop_love">
+                            <h2>[KZM-BLACK X5]
+                                別墅帳 2-3人 <br>
+                                $100 /天</h2>
+                            <ul>
+                                <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card"><a href=""><img src="./images/bbq_3.jpg" alt=""></a></div>
+                        <div class="shop_love">
+                            <h2>[KZM-BLACK X5]
+                                別墅帳 2-3人 <br>
+                                $100 /天</h2>
+                            <ul>
+                                <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="card"><a href=""><img src="./images/bbq_3.jpg" alt=""></a></div>
+                        <div class="shop_love">
+                            <h2>[KZM-BLACK X5]
+                                別墅帳 2-3人 <br>
+                                $100 /天</h2>
+                            <ul>
+                                <li><a href=""><img src="./icon/love.svg" alt=""></a></li>
+                                <li><a href=""><img src="./icon/shop.svg" alt=""></a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+
+    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+
+    <script>
+
+
+        $('.content').slick({
+
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+
+            ]
+        });
+
+        $(document).ready(function () {
+            $('.hambuger').hide();
+
+            $('.icon_ham').click(function () {
+                $('.hambuger').toggle();
+                // return false;
+
+
+
+
+
+            });
+
+
+        });
+        // $('.box>.card ').hover(function () {
+
+        //     console.log('hi', $(this));
+        //     $(this).next().css('transform', 'translateY(-350px)').parent().siblings().children().css('transform', 'translateY(0px)');
+
+
+        // });
+        // $('.shop_love').mouseleave(function () {
+        //     $('.shop_love').css('transform', 'translateY(0px)');
+
+
+
+        // });
+    </script>
+
+
+</body>
+
+</html>
